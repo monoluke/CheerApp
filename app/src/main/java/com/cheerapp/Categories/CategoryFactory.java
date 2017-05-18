@@ -8,24 +8,24 @@ import java.util.Random;
 
 public class CategoryFactory {
 
-        Category factory(String name){
-        Category category = new com.cheerapp.Categories.Category();
-        switch (name){
-            case "Exam":
-                category = new Exam();
-                break;
-            case "Social":
-                category = new Social();
-                break;
-            case "Sport":
-                category = new Sport();
-                break;
-            case "Vacation":
-                category = new Vacation();
-                break;
+        static Category factory(String name){
+            Category category = new com.cheerapp.Categories.Category();
+            switch (name){
+                case "Exam":
+                    category = new Exam();
+                    break;
+                case "Social":
+                    category = new Social();
+                    break;
+                case "Sport":
+                    category = new Sport();
+                    break;
+                case "Vacation":
+                    category = new Vacation();
+                    break;
+            }
+            return category;
         }
-        return category;
-    }
 
 
 }
