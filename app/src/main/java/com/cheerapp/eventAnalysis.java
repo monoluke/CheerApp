@@ -14,7 +14,12 @@ public class eventAnalysis {
         Category eventCategory = Classifier.categoryDetector(event.description);
         String notificationMsg = eventCategory.sampleMsg();
         Boolean showFlag = NotificationTime.determineTime(eventCategory, event.startTime);
-
+        Image img = ImageFinder.findImage();
+        if(!showFlag){
+            return null;
+        }
+        Notification notification = new Notification(event.description, notificationMsg, img);
+        return notification;
     }
 
 }

@@ -9,5 +9,11 @@ import java.util.Calendar;
 public class Notification {
     public String eventDescription;
     public String notificationMsg;
-    public Calendar timeStamp; //use good time
+    public Image notificationImg;
+
+    public Notification(String description, String msg, Image img){
+        eventDescription = description;
+        notificationMsg = msg;
+        notificationImg = img;
+    }
 }
