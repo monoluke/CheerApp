@@ -11,6 +11,5 @@ public class Vacation extends Category {
 
     Vacation(){
         name = "Vacation";
-        numOfNotifications = 1;
     }
 }

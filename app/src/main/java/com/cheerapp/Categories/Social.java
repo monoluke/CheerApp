@@ -10,6 +10,5 @@ public class Social extends Category {
 
     Social(){
         name = "Social";
-        numOfNotifications = 1;
     }
 }

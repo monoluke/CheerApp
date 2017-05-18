@@ -11,6 +11,5 @@ public class Sport extends Category {
 
     Sport(){
         name = "Sport";
-        numOfNotifications = 1;
     }
 }

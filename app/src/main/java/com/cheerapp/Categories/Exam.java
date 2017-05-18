@@ -12,6 +12,5 @@ public class Exam extends Category {
 
     Exam(){
         name = "Exam";
-        numOfNotifications = 1;
     }
 }

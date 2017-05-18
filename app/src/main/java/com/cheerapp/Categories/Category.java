@@ -10,7 +10,6 @@ import java.util.Random;
 public class Category {
     static String[] messages;
     public String name;
-    public int numOfNotifications;
 
     Category Category(String name){
         Category category = new Category();

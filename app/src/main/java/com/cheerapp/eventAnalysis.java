@@ -10,6 +10,7 @@ public class eventAnalysis {
 
     Notification createNotification(Event event){
         Category eventCategory = Classifier.categoryDetector(event.description);
+        String notificationMsg = eventCategory.sampleMsg();
 
     }
 
