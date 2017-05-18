@@ -39,7 +39,7 @@ public class eventParser {
      */
     public static Notification getNearestNotification(ArrayList<ArrayList> events) {
         ArrayList<Event> allEvents = new ArrayList<>();
-        for (int i = 0; i < events.size(); i++) {
+        for (int i = 0; i < events.get(0).size(); i++) {
             String description = (String)events.get(0).get(i);
             String date = (String)events.get(1).get(i);
             Event currentEvent = parseEvent(description, date);
