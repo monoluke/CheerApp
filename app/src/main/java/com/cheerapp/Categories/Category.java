@@ -8,7 +8,7 @@ import java.util.Random;
  */
 
 public class Category {
-    static String[] messages;
+    public String[] messages;
     static int[] notificationTimes;
     public String name;
 
