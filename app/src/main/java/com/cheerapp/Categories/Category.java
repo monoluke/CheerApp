@@ -7,7 +7,7 @@ import java.util.Random;
  * Created by Daniella Horan on 5/18/2017.
  */
 
-public abstract class Category {
+public class Category {
     static String[] messages;
     public String name;
     public int numOfNotifications;
