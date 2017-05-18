@@ -5,8 +5,8 @@ package com.cheerapp.Categories;
  */
 
 public class Sport extends Category {
-    static String[] ExamMessages;
-    public String[] messages = {"May the odds be ever in your favor!", "We are the champions",
+    static String[] messages = {"May the odds be ever in your favor!", "We are the champions",
+    public String[] ExamMessages;
             "WIN!!!"};
     public String name;
     public static int[] notificationTimes = {1440};

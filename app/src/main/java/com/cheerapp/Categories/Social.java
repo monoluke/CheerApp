@@ -5,8 +5,8 @@ package com.cheerapp.Categories;
  */
 
 public class Social extends Category {
-    static String[] ExamMessages;
-    public String[] messages = {"You're beautiful, inside and out!", "Have fun"};
+    static String[] messages = {"You're beautiful, inside and out!", "Have fun"};
+    public String[] ExamMessages;
     public String name;
     public static int[] notificationTimes = {1440};
 

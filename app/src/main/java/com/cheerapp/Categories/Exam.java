@@ -6,15 +6,16 @@ import java.util.Random;
  */
 
 public class Exam extends Category {
-    static String[] ExamMessages;
-    public String[] messages = {"Good luck!", "You're smart", "It'll all be over soon",
+    static String[] ExamMessages = {"Good luck!", "You're smart", "It'll all be over soon",
             "you've passed far worse things already...", "It's only an exam"};
+
 
     public static int[] notificationTimes = {1440};
     public String name;
 
     Exam(){
         name = "Exam";
+        messages = ExamMessages;
     }
 
 }
