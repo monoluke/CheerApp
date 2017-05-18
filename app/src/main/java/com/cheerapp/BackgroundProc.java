@@ -55,25 +55,25 @@ public class BackgroundProc extends IntentService {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-//            ArrayList<ArrayList> events =  Utility.readCalendarEvent(this);
-//            Notification notification = eventParser.getNearestNotification(events);
-            if (true)
+           ArrayList<ArrayList> events =  Utility.readCalendarEvent(this);
+            Notification notification = eventParser.getNearestNotification(events);
+            if (notification != null)
             {
                 NotificationCompat.Builder mBuilder =
                         new NotificationCompat.Builder(this)
                                 .setSmallIcon(R.drawable.face)
-                                .setContentTitle("My notification")
-                                .setContentText("Hello World!")
+                                .setContentTitle(notification.eventDescription)
+                                .setContentText(notification.notificationMsg)
                                 .setDefaults(NotificationCompat.DEFAULT_ALL);
                 // Creates an explicit intent for an Activity in your app
-                Intent resultIntent = new Intent(this, MainActivity.class);
+                Intent resultIntent = new Intent(this, YouAreAwesome.class);
                 // The stack builder object will contain an artificial back stack for the
                 // started Activity.
                 // This ensures that navigating backward from the Activity leads out of
                 // your application to the Home screen.
                 TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
                 // Adds the back stack for the Intent (but not the Intent itself)
-                stackBuilder.addParentStack(MainActivity.class);
+                stackBuilder.addParentStack(YouAreAwesome.class);
                 // Adds the Intent that starts the Activity to the top of the stack
                 stackBuilder.addNextIntent(resultIntent);
                 PendingIntent resultPendingIntent =
