@@ -1,6 +1,9 @@
 package com.cheerapp;
 
+import android.text.Editable;
+
 import com.cheerapp.Categories.Category;
+import com.cheerapp.Categories.CategoryFactory;
 
 import java.util.Arrays;
 
@@ -18,16 +21,16 @@ public class Classifier {
 
      static String[] Vacation = {"vacation", "holiday", "break", "rest", "beach"}; // 2
 
-    static HashMap<String, List<String>> dict = new HashMap<>();
-    static HashMap<String, Integer> toCount = new HashMap<>();
+     static HashMap<String, List<String>> dict = new HashMap<>();
+     static HashMap<String, Integer> toCount = new HashMap<>();
 
-    static void constructor(){
-        dict.put("test", Arrays.asList(Test));
-        dict.put("social", Arrays.asList(Social));
-        dict.put("vacation", Arrays.asList(Vacation));
-        toCount.put("test", 0);
-        toCount.put("social", 0);
-        toCount.put("vacation", 0);
+     static void constructor(){
+        dict.put("Exam", Arrays.asList(Test));
+        dict.put("Social", Arrays.asList(Social));
+        dict.put("Vacation", Arrays.asList(Vacation));
+        toCount.put("Exam", 0);
+        toCount.put("Social", 0);
+        toCount.put("Vacation", 0);
     }
 
     static Category categoryDetector(String string){
@@ -53,16 +56,13 @@ public class Classifier {
                 maxEntry = entry;
             }
         }
-
         if (maxEntry == null){
             return null;
         }
         else{
-            Category category = new Category();
-            category.name = maxEntry.getKey();
+            Category category = CategoryFactory.factory(maxEntry.getKey());
             return category;
         }
     }
-
 }
 

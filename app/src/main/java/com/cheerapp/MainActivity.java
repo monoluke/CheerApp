@@ -17,10 +17,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Classifier c = new Classifier();
+        c.categoryDetector("TEST EXAM VACATION GALA and in DInner");
 
 
         //ContentResolver contentResolver = this.getContentResolver();
-       Log.i("cheer", "hello mom   aasd");
         // Here, thisActivity is the current activity
 
         if (ContextCompat.checkSelfPermission(this,

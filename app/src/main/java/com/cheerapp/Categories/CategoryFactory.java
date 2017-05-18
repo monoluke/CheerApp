@@ -8,7 +8,7 @@ import java.util.Random;
 
 public class CategoryFactory {
 
-        static Category factory(String name){
+        public static Category factory(String name){
             Category category = new com.cheerapp.Categories.Category();
             switch (name){
                 case "Exam":
