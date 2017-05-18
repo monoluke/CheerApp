@@ -9,8 +9,7 @@ import com.cheerapp.Categories.Category;
 public class eventAnalysis {
 
     Notification createNotification(Event event){
-        parser parserInstance = new parser(); //erase
-        Category eventCategory = parserInstance.wordDetector(event.description);
+        Category eventCategory = Classifier.categoryDetector(event.description);
 
     }
 
