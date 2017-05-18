@@ -9,8 +9,8 @@ import java.util.Random;
 
 public class Category {
     public String[] messages;
-    public static double[] notificationTimes;
     public String name;
+    public long[] notificationTimes;
 
 
     public String sampleMsg(){

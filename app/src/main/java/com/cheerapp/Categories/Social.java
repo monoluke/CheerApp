@@ -5,12 +5,15 @@ package com.cheerapp.Categories;
  */
 
 public class Social extends Category {
-    static String[] messages = {"You're beautiful, inside and out!", "Have fun"};
-    public String[] ExamMessages;
+    static String[] SocialMessages = {"You're beautiful, inside and out!", "Have fun"};
     public String name;
-    public static int[] notificationTimes = {1440};
+    public static long[] times = {1440};
+
 
     Social(){
         name = "Social";
+        messages = SocialMessages;
+        notificationTimes = times;
+
     }
 }
