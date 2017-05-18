@@ -9,26 +9,9 @@ import java.util.Random;
 
 public class Category {
     static String[] messages;
+    static int[] notificationTimes;
     public String name;
 
-    Category Category(String name){
-        Category category = new Category();
-        switch (name){
-            case "Exam":
-                category = new Exam();
-                break;
-            case "Social":
-                category = new Social();
-                break;
-            case "Sport":
-                category = new Sport();
-                break;
-            case "Vacation":
-                category = new Vacation();
-                break;
-        }
-        return category;
-    }
 
     public String sampleMsg(){
         int rnd = new Random().nextInt(messages.length);
