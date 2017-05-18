@@ -19,18 +19,23 @@ public class Classifier {
      static String[] Social = {"social", "party", "celebration", "dinner", "gala", "prom", "anniversary", "festival",
             "date", "carnival"}; // 1
 
-     static String[] Vacation = {"vacation", "holiday", "break", "rest", "beach"}; // 2
+     static String[] Vacation = {"vacation", "holiday", "break", "rest", "beach", "flight"}; // 2
 
-     static HashMap<String, List<String>> dict = new HashMap<>();
+     static String[] Sport = {"match", "competition","sport", "race", "marathon", "run","game", "vs"};
+
+
+    static HashMap<String, List<String>> dict = new HashMap<>();
      static HashMap<String, Integer> toCount = new HashMap<>();
 
      static void constructor(){
         dict.put("Exam", Arrays.asList(Test));
         dict.put("Social", Arrays.asList(Social));
         dict.put("Vacation", Arrays.asList(Vacation));
+        dict.put("Sport", Arrays.asList(Vacation));
         toCount.put("Exam", 0);
         toCount.put("Social", 0);
         toCount.put("Vacation", 0);
+         toCount.put("Sport", 0);
     }
 
     static Category categoryDetector(String string){
