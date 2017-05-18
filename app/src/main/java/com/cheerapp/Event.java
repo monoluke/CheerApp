@@ -8,6 +8,7 @@ import java.util.Date;
  * Created by hadas on 18-May-17.
  */
 
+
 public class Event {
 
     public String description;
