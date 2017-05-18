@@ -3,11 +3,19 @@ import junit.framework.Test;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.ArrayList;
 
+import static android.R.attr.entryValues;
+import static android.R.attr.x;
+import static android.R.id.message;
 import static java.lang.System.in;
 
 
@@ -16,43 +24,102 @@ import static java.lang.System.in;
  */
 
 public class parser {
-    static String[] Test = {"test", "quiz", "exam", "bagrut", "sat", "psychometric", "examination",
-            "tryout", "audition", "midterm", "final", "interview", "evaluation", "university"};
+     String[] Test = {"test", "quiz", "exam", "bagrut", "sat", "psychometric", "examination",
+            "tryout", "audition", "midterm", "final", "interview", "evaluation", "university"}; // 0
 
-    static String[] Social = {"social", "party", "celebration", "dinner", "gala", "prom", "anniversary", "festival",
-            "date", "carnival"};
+     String[] Social = {"social", "party", "celebration", "dinner", "gala", "prom", "anniversary", "festival",
+            "date", "carnival"}; // 1
 
-    static String[] Vacation = {"vacation", "holiday", "break", "rest", "beach"};
+     String[] Vacation = {"vacation", "holiday", "break", "rest", "beach"}; // 2
 
-    static String[][] categories = {Test, Social, Vacation};
+    HashMap<String, List<String>> dict = new HashMap<>();
+    HashMap<String, Integer> toCount = new HashMap<>();
+//    HashMap<String, Integer> counter = new HashMap<>();
 
-    static int maxInd = 0;
+//    HashMap<String, List<String>> dict;
+    int[] counter = {0, 0, 0};
+    String[] catergories = {"test", "social", "vacation"};
 
-    static int categoryCounter[];
+
+    void constructor(){
+        dict.put("test", Arrays.asList(Test));
+        dict.put("social", Arrays.asList(Social));
+        dict.put("vacation", Arrays.asList(Vacation));
+        toCount.put("test", 0);
+        toCount.put("social", 0);
+        toCount.put("vacation", 0);
+    }
+
+//    String[][] categories = {Test, Social, Vacation};
+
+     int maxInd = 0;
+
+//    int size = categories.length;
 
 
-    private static String wordDetector(String x){
-        String[] message = x.split(" ");
-        for (int i = 0; i < message.length; i++){
-            for (int j = 0; j < categories.length; j++){
-                if (Arrays.asList(categories[j]).contains(message[i])){
-                    categoryCounter[j]++;
+    String wordDetector(String string){
+        constructor();
+        String str = string.toLowerCase();
+        String[] message = str.split(" ");
+        for (String word : message){
+            int rounds = 0;
+            for (Map.Entry<String, List<String>> x : dict.entrySet()) {
+                if (x.getValue().contains(word)){
+                    Integer a = toCount.get(x.getKey()) + 1;
+                    toCount.remove(x.getKey());
+                    toCount.put(x.getKey(), a);
                 }
+                rounds ++;
+             }
+        }
+        Map.Entry<String, Integer> maxEntry = null;
+        for (Map.Entry<String, Integer> entry : toCount.entrySet())
+        {
+            if (maxEntry == null || entry.getValue().compareTo(maxEntry.getValue()) > 0)
+            {
+                maxEntry = entry;
             }
         }
-        for (int i = 1; i < categoryCounter.length; i++){
-            if (categoryCounter[i] > categoryCounter[i-1]){
-                maxInd = i;
-            }
-        }
-        if (categoryCounter[maxInd] == 0){
+
+        if (maxEntry == null){
             return null;
         }
-        else return categories[maxInd][0];
+        else{
+            System.out.print("done");
+            return null;
+        }
     }
-    public static void main(){
-        String a = wordDetector("exam");
-        System.out.print(a);
-    }
+
+
+//        for (int i = 0; i < message.length; i++){
+//            for (int j = 0; j < categories.length; j++){
+//                if (Arrays.asList(categories[j]).contains(message[i])){
+//                    categoryCounter[j]++;
+//                }
+//            }
+//        String[] message = string.split(" ");
+//        for (int i = 0; i < message.length; i++){
+//            for (int j = 0; j < categories.length; j++){
+//                if (Arrays.asList(categories[j]).contains(message[i])){
+//                    categoryCounter[j]++;
+//                }
+//            }
+//        }
+//        for (int i = 1; i < categoryCounter.length; i++){
+//            if (categoryCounter[i] > categoryCounter[i-1]){
+//                maxInd = i;
+//            }
+//        }
+//        if (categoryCounter[maxInd] == 0){
+//            return null;
+//        }
+//        else
+//            System.out.print(categories[maxInd][0]);
+//        return "a";
+//    }
+//    public static void main(){
+//        String a = wordDetector("exam");
+//        System.out.print(a);
+//    }
 }
 
