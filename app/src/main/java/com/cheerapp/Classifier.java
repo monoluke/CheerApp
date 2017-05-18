@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-lkjhklhlhlklhklk
+
 
 public class Classifier {
      static String[] Test = {"test", "quiz", "exam", "bagrut", "sat", "psychometric", "examination",
