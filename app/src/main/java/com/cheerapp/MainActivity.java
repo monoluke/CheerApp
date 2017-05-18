@@ -56,9 +56,12 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        ArrayList<ArrayList> events =  Utility.readCalendarEvent(this);
-        int i = 1;
-
+        //ArrayList<ArrayList> events =  Utility.readCalendarEvent(this);
+        Intent i = new Intent(this, BackgroundProc.class);
+        // Add extras to the bundle
+        i.putExtra("foo", "bar");
+        // Start the service
+        startService(i);
     }
 
 // bobib

@@ -9,6 +9,6 @@ import java.util.Calendar;
 public class Notification {
     public String eventDescription;
     public String notificationMsg;
-    public Calendar;
+//    public Calendar;
 
 }
