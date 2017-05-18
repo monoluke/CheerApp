@@ -13,13 +13,10 @@ import static java.lang.System.in;
  */
 
 public class NotificationTime {
-    Boolean determineTime(Category category, Calendar time) {
+    static Boolean determineTime(Category category, Calendar time) {
         Calendar now = new GregorianCalendar();
 
-
         for (int k = 0; k < category.messages.length; k++) {
-
-
         }
     }
 
