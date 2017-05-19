@@ -14,7 +14,7 @@ public class eventAnalysis {
         Category eventCategory = Classifier.categoryDetector(event.description);
         String notificationMsg = eventCategory.sampleMsg();
         Boolean showFlag = NotificationTime.determineTime(eventCategory, event.startTime);
-        Image img = ImageFinder.findImage();
+        Image img = ImageFinder.findImage(eventCategory);
         if(!showFlag){
             return null;
         }

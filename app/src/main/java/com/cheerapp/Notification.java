@@ -9,9 +9,9 @@ import java.util.Calendar;
 public class Notification {
     public String eventDescription;
     public String notificationMsg;
-    public Image notificationImg;
+    public String notificationImg;
 
-    public Notification(String description, String msg, Image img){
+    public Notification(String description, String msg, String img){
         eventDescription = description;
         notificationMsg = msg;
         notificationImg = img;
