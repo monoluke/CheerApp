@@ -61,7 +61,7 @@ public class BackgroundProc extends IntentService {
             {
                 NotificationCompat.Builder mBuilder =
                         new NotificationCompat.Builder(this)
-                                .setSmallIcon(R.drawable.face)
+                                .setSmallIcon(R.drawable.pompom22)
                                 .setContentTitle(notification.eventDescription)
                                 .setContentText(notification.notificationMsg)
                                 .setDefaults(NotificationCompat.DEFAULT_ALL);

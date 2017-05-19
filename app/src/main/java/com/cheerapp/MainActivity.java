@@ -18,15 +18,12 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    // todo delete:
-    static int counter = 0;
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Classifier c = new Classifier();
 
-        this.showUpcomingEvents();
+//        this.showUpcomingEvents();
         //ContentResolver contentResolver = this.getContentResolver();
         // Here, thisActivity is the current activity
 
@@ -74,8 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void onClickCal(View v)
-    {
+    public void onClickCal(View v){
         Intent calendarIntent = new Intent(Intent.ACTION_INSERT, CalendarContract.Events.CONTENT_URI);
         PackageManager packageManager = getPackageManager();
         List activities = packageManager.queryIntentActivities(calendarIntent,
@@ -86,6 +82,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void onClickCat(View v) {
+        Intent intent = new Intent(this, CategoriesActivityPage.class);
+        startActivity(intent);
+
+
+    }
+/*
     @Override
     protected void onResume() {
         super.onResume();
@@ -105,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
         }
         // Capture the layout's TextView and set the string as its text
         TextView textView = (TextView) findViewById(R.id.textView);
-        counter++;
         textView.setText(message);
     }
+    */
 }
