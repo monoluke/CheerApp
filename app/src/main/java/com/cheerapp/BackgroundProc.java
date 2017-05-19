@@ -51,7 +51,7 @@ public class BackgroundProc extends IntentService {
         while (true)
         {
             try {
-                TimeUnit.SECONDS.sleep(10);
+                TimeUnit.SECONDS.sleep(1);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
