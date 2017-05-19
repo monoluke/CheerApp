@@ -67,6 +67,8 @@ public class BackgroundProc extends IntentService {
                                 .setDefaults(NotificationCompat.DEFAULT_ALL);
                 // Creates an explicit intent for an Activity in your app
                 Intent resultIntent = new Intent(this, YouAreAwesome.class);
+                resultIntent.putExtra("eventDescription", notification.eventDescription);
+                resultIntent.putExtra("notificationMsg", notification.notificationMsg);
                 // The stack builder object will contain an artificial back stack for the
                 // started Activity.
                 // This ensures that navigating backward from the Activity leads out of
