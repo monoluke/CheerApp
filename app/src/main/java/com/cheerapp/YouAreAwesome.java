@@ -16,7 +16,7 @@ public class YouAreAwesome extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_you_are_awesome);
         TextView text1 = (TextView) findViewById(R.id.editText);
-        text1.setText(Globaly.eventDescription);
+        text1.setText("Event: "+Globaly.eventDescription);
         TextView text = (TextView) findViewById(R.id.editText2);
         text.setText(Globaly.notificationMsg);
 
