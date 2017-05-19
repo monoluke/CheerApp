@@ -27,7 +27,11 @@
             android:name=".BackgroundProc"
             android:exported="false" />
 
-        <activity android:name=".YouAreAwesome"></activity>
+        <activity android:name=".YouAreAwesome" />
+        <activity
+            android:name=".Categories"
+            android:label="@string/title_activity_categories"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

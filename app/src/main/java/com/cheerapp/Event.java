@@ -1,8 +1,6 @@
 package com.cheerapp;
 
 import java.util.Calendar;
-import java.util.Comparator;
-import java.util.Date;
 
 /**
  * Created by hadas on 18-May-17.
