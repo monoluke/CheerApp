@@ -1,5 +1,7 @@
 package com.cheerapp;
 import com.cheerapp.R;
+
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -20,8 +22,12 @@ public class YouAreAwesome extends AppCompatActivity {
 
 
 
+
+        int imageResourse = getResources().getIdentifier("@drawable/" + Globaly.notificationImg, null, getPackageName());
         ImageView im = (ImageView) findViewById(R.id.imageView2);
-        im.setImageDrawable(R.drawable.i4);
+        Drawable res = getResources().getDrawable(imageResourse);
+        im.setImageDrawable(res);
+
 
 
     }
