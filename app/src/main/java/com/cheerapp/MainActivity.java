@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Classifier c = new Classifier();
 
-//        this.showUpcomingEvents();
+        this.showUpcomingEvents();
         //ContentResolver contentResolver = this.getContentResolver();
         // Here, thisActivity is the current activity
 
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-/*
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -101,14 +101,15 @@ public class MainActivity extends AppCompatActivity {
         int i = 0;
         ArrayList<ArrayList> events = Utility.readCalendarEvent(this);
         ArrayList<Event> upcomingEvents = eventParser.getUpcomingEvents(events);
-        while (i < 5 && i < upcomingEvents.size())
-        {
-            message += upcomingEvents.get(i).description + "\n";
-            i++;
-        }
+//        while (i < 5 && i < upcomingEvents.size())
+//        {
+//            message += upcomingEvents.get(i).description + "\n";
+//            i++;
+//        }
+        message = "There are " + Integer.toString(upcomingEvents.size()) + " upcoming events in the next 30 days!";
         // Capture the layout's TextView and set the string as its text
         TextView textView = (TextView) findViewById(R.id.textView);
         textView.setText(message);
     }
-    **/
+
 }
