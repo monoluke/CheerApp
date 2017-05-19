@@ -7,13 +7,12 @@ package com.cheerapp.Categories;
 public class Vacation extends Category {
     static String[] VacationMessages = {"Have fun!", "Enjoy", "Finally - some free time",
             "Rest a little bit...", "FUN FUN FUN"};
-    public String name;
     public static long[] times = {1440, 4320, 10080};
 
 
     Vacation(){
-        name = "Vacation";
-        messages = VacationMessages;
-        notificationTimes = times;
+        super.name = "Vacation";
+        super.messages = VacationMessages;
+        super.notificationTimes = times;
     }
 }

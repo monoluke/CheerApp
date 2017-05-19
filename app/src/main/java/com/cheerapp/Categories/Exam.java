@@ -8,13 +8,12 @@ import java.util.Random;
 public class Exam extends Category {
     static String[] ExamMessages = {"Good luck!", "You're smart", "It'll all be over soon",
             "you've passed far worse things already...", "It's only an exam"};
-    public String name;
     public static long[] times = {1440};
 
     Exam(){
-        name = "Exam";
-        messages = ExamMessages;
-        notificationTimes = times;
+        super.name = "Exam";
+        super.messages = ExamMessages;
+        super.notificationTimes = times;
 
     }
 

@@ -6,14 +6,13 @@ package com.cheerapp.Categories;
 
 public class Social extends Category {
     static String[] SocialMessages = {"You're beautiful, inside and out!", "Have fun"};
-    public String name;
     public static long[] times = {1440};
 
 
     Social(){
-        name = "Social";
-        messages = SocialMessages;
-        notificationTimes = times;
+        super.name = "Social";
+        super.messages = SocialMessages;
+        super.notificationTimes = times;
 
     }
 }

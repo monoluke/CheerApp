@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">CheerApp</string>
     <string name="title_activity_login">Sign in</string>
+    <color name="orange">#69395A</color>
+    <color name="blue">#FFFFFF</color>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>

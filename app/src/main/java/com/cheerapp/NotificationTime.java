@@ -26,7 +26,7 @@ public class NotificationTime {
 
         for (long a : category.notificationTimes)
         {
-            if(a == differentInSec){
+            if(true){
                 return true;
             }
         }

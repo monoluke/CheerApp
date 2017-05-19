@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/orange"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.cheerapp.CategoriesActivityPage">
@@ -17,85 +20,100 @@
             android:id="@+id/checkBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Vacation" />
+            android:text="Vacation"
+            android:textColor="@color/blue"/>
 
         <CheckBox
             android:id="@+id/checkBox2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Exam" />
+            android:text="Exam"
+            android:textColor="@color/blue"
+            />
 
         <CheckBox
             android:id="@+id/checkBox3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sport" />
+            android:text="Sport"
+            android:textColor="@color/blue"/>
 
         <CheckBox
             android:id="@+id/checkBox4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Social" />
+            android:text="Social"
+            android:textColor="@color/blue"/>
 
         <CheckBox
             android:id="@+id/checkBox5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Relationship" />
+            android:text="Relationship"
+            android:textColor="@color/blue"/>
 
         <CheckBox
             android:id="@+id/checkBox6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Family" />
+            android:text="Family"
+            android:textColor="@color/blue"/>
 
         <CheckBox
             android:id="@+id/checkBox7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Fun" />
+            android:text="Fun"
+            android:textColor="@color/blue"/>
 
         <CheckBox
             android:id="@+id/checkBox8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Work" />
+            android:text="Work"
+            android:textColor="@color/blue"/>
 
         <CheckBox
             android:id="@+id/checkBox9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="School" />
+            android:text="School"
+            android:textColor="@color/blue"/>
 
         <CheckBox
             android:id="@+id/checkBox11"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Holiday" />
+            android:text="Holiday"
+            android:textColor="@color/blue"/>
 
         <CheckBox
             android:id="@+id/checkBox20"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Medical" />
+            android:text="Medical"
+            android:textColor="@color/blue"/>
 
         <CheckBox
             android:id="@+id/checkBox21"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Birthday" />
+            android:text="Birthday"
+            android:textColor="@color/blue"/>
 
         <CheckBox
             android:id="@+id/checkBox22"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Shopping" />
+            android:text="Shopping"
+            android:textColor="@color/blue"/>
 
         <Button
             android:id="@+id/button2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Create New" />
+            android:text="Create New"
+            android:textColor="@color/blue"/>
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
