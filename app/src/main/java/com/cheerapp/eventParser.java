@@ -1,6 +1,8 @@
 package com.cheerapp;
 
 
+import android.util.Log;
+
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.text.SimpleDateFormat;
@@ -36,7 +38,7 @@ public class eventParser {
 
     private static ArrayList<Event> parseAndSort(ArrayList<ArrayList> events) {
         ArrayList<Event> allEvents = new ArrayList<>();
-        for (int i = 0; i < events.size() && i < 100; i++) {
+        for (int i = 0; i < events.get(0).size() && i < 100; i++) {
             String description = (String)events.get(0).get(i);
             String date = (String)events.get(1).get(i);
             Event currentEvent = parseEvent(description, date);
