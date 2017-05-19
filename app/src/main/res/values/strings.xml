@@ -3,6 +3,7 @@
     <string name="title_activity_login">Sign in</string>
     <color name="orange">#69395A</color>
     <color name="blue">#FFFFFF</color>
+    <color name="eggplant">#69395a</color>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
