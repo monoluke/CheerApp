@@ -25,7 +25,7 @@ public class ImageFinder {
         if (category.name.equals("Social")){
             num = new Random().nextInt(14-24);
         }
-        return Integer.toString(num);
+        return "i"+Integer.toString(num);
     }
 
 }
