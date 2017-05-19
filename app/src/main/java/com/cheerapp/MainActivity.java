@@ -1,35 +1,32 @@
 package com.cheerapp;
 
 import android.Manifest;
-import android.accounts.Account;
-import android.accounts.AccountManager;
-import android.content.ContentResolver;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.database.Cursor;
-import android.net.Uri;
 import android.provider.CalendarContract;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.view.Window;
+import android.widget.TextView;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.regex.Pattern;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
+    // todo delete:
+    static int counter = 0;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Classifier c = new Classifier();
-        c.categoryDetector("TEST EXAM VACATION GALA and in DInner");
 
-
+        this.showUpcomingEvents();
         //ContentResolver contentResolver = this.getContentResolver();
         // Here, thisActivity is the current activity
 
@@ -59,7 +56,8 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        ArrayList<ArrayList> events =  Utility.readCalendarEvent(this);
+
+
         Intent i = new Intent(this, BackgroundProc.class);
         // Add extras to the bundle
         i.putExtra("foo", "bar");
@@ -74,5 +72,40 @@ public class MainActivity extends AppCompatActivity {
                                            String permissions[], int[] grantResults) {
         System.out.println("hello");
 
+    }
+
+    public void onClickCal(View v)
+    {
+        Intent calendarIntent = new Intent(Intent.ACTION_INSERT, CalendarContract.Events.CONTENT_URI);
+        PackageManager packageManager = getPackageManager();
+        List activities = packageManager.queryIntentActivities(calendarIntent,
+                PackageManager.MATCH_DEFAULT_ONLY);
+        boolean isIntentSafe = activities.size() > 0;
+        if (isIntentSafe){
+            startActivity(calendarIntent);
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        this.showUpcomingEvents();
+    }
+
+    public void showUpcomingEvents(){
+
+        String message = "";
+        int i = 0;
+        ArrayList<ArrayList> events = Utility.readCalendarEvent(this);
+        ArrayList<Event> upcomingEvents = eventParser.getUpcomingEvents(events);
+        while (i < 5 && i < upcomingEvents.size())
+        {
+            message += upcomingEvents.get(i).description + "\n";
+            i++;
+        }
+        // Capture the layout's TextView and set the string as its text
+        TextView textView = (TextView) findViewById(R.id.textView);
+        counter++;
+        textView.setText(message);
     }
 }
