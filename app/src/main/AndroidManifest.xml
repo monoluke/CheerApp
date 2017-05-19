@@ -28,10 +28,7 @@
             android:exported="false" />
 
         <activity android:name=".YouAreAwesome" />
-        <activity
-            android:name=".Categories"
-            android:label="@string/title_activity_categories"
-            android:theme="@style/AppTheme.NoActionBar" />
+
         <activity android:name=".CategoriesActivityPage"></activity>
     </application>
 
